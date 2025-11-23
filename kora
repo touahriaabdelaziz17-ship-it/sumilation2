@@ -1,0 +1,20 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+v0 = 50
+theta = 45
+g = 9.8
+
+theta_rad = np.radians(theta)
+t_flight = 2 * v0 * np.sin(theta_rad) / g
+t = np.linspace(0, t_flight, 300)
+
+x = v0 * np.cos(theta_rad) * t
+y = v0 * np.sin(theta_rad) * t - 0.5 * g * t**2
+
+plt.plot(x, y)
+plt.title("محاكاة حركة قذيفة")
+plt.xlabel("x (m)")
+plt.ylabel("y (m)")
+plt.grid()
+plt.show()
